@@ -1,0 +1,12 @@
+# Checklist Flask
+- [ ] `SECRET_KEY` e credenciais vindas do ambiente, fora do Git; `.env` no `.gitignore`.
+- [ ] `debug=False` em produção (o debugger Werkzeug permite executar código).
+- [ ] Senhas com `werkzeug.security`/argon2; nunca em texto puro.
+- [ ] CSRF (Flask-WTF) em formulários; cookies `Secure`, `HttpOnly`, `SameSite`.
+- [ ] SQL parametrizado (SQLAlchemy); sem f-string em query.
+- [ ] Autorização por recurso (o usuário A não acessa o id do B).
+- [ ] Jinja autoescape; nada de `|safe` em input do usuário.
+- [ ] Upload: `secure_filename`, extensão e tamanho (`MAX_CONTENT_LENGTH`), fora de `static/`.
+- [ ] Rate limit no login; mensagens de erro sem detalhe interno.
+- [ ] Dependências atualizadas (`pip-audit`).
+- [ ] Logs sem PII nem tokens.
